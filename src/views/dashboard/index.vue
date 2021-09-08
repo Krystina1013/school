@@ -1,0 +1,55 @@
+<template>
+  <div class="app-container">
+    <el-row :gutter="20">
+      <el-col :span="5">
+        <scene-manage />
+      </el-col>
+      <el-col :span="19">
+        <action-manage />
+      </el-col>
+    </el-row>
+
+    <el-row :gutter="20">
+      <el-col :xs="8" :sm="10" :md="9" :lg="10" :xl="10">
+        <personnel-pass />
+      </el-col>
+      <el-col :xs="8" :sm="10" :md="9" :lg="10" :xl="11">
+        <car-pass />
+      </el-col>
+      <el-col :xs="8" :sm="4" :md="6" :lg="4" :xl="3">
+        <statistics-data />
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+import { Component, Vue } from "vue-property-decorator";
+import actionManage from "./components/actionManage";
+import sceneManage from "./components/sceneManage";
+import passTime from "./components/passTime";
+import openDoor from "./components/openDoor";
+import PersonnelPass from "./components/personnelPass";
+import CarPass from "./components/carPass";
+import StatisticsData from "./components/statisticsData";
+
+@Component({
+  components: {
+    actionManage,
+    sceneManage,
+    passTime,
+    openDoor,
+    PersonnelPass,
+    CarPass,
+    StatisticsData
+  }
+})
+export default class dashboart extends Vue {}
+</script>
+
+<style rel="stylesheet/scss" lang="scss" scoped>
+.app-container {
+  margin-bottom: 20px;
+  padding: 0px 15px;
+}
+</style>
